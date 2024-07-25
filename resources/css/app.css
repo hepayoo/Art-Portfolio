@@ -508,3 +508,11 @@ textarea {
     margin-bottom: 25px;
   }
 }
+
+
+.router-link-active {
+  background-color: orangered;
+  color: #fff;
+  padding: 3px 15px;
+  border-radius: 3px;
+}
