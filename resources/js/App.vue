@@ -12,7 +12,7 @@
           <ul>
             <li><router-link :to="{name:'Home'}">Home</router-link></li>
             <li><router-link :to="{name:'Blog'}">Art</router-link></li>
-            <li><router-link :to="{name:'About'}">About</router-link></li>
+           
             <li><router-link :to="{name:'Contact'}">Contact</router-link></li>
 
             <li>
@@ -27,9 +27,16 @@
             >
           </li>
 
-
-
           
+          <li>
+            <router-link @click="hideOverlay" :to="{ name: 'Dashboard' }"
+              >Dashboard</router-link
+            >
+          </li>
+
+
+
+
           </ul>
         </div>
 
