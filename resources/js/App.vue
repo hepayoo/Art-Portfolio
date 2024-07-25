@@ -14,6 +14,22 @@
             <li><router-link :to="{name:'Blog'}">Art</router-link></li>
             <li><router-link :to="{name:'About'}">About</router-link></li>
             <li><router-link :to="{name:'Contact'}">Contact</router-link></li>
+
+            <li>
+            <router-link @click="hideOverlay" :to="{ name: 'Register' }"
+              >Register</router-link
+            >
+          </li>
+
+            <li>
+            <router-link @click="hideOverlay" :to="{ name: 'Login' }"
+              >Login</router-link
+            >
+          </li>
+
+
+
+          
           </ul>
         </div>
 
