@@ -42,4 +42,9 @@ class CategoryController extends Controller
         return $category->save();
     }
 
+    public function destroy(category $category){
+
+        return $category->delete();
+    }
+
 }
