@@ -6,8 +6,11 @@
     <div class="links">
       <ul>
         <li><a href="">Create Post</a></li>
-
-        <li><a href="">Create Category</a></li>
+        <li>
+          <router-link :to="{ name: 'CreateCategories' }"
+            >Create Categories</router-link
+          >
+        </li>
 
         <li><a href="">Categories List</a></li>
       </ul>
@@ -26,17 +29,25 @@ export default {
     axios
       .get("/api/user")
       .then((response) => (this.name = response.data.name))
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        if (error.response.status === 401) {
+          this.$emit("updateSidebar");
+          localStorage.removeItem("authenticated");
+          this.$router.push({ name: "Login" });
+        }
+      });
   },
 
   methods: {
     logout() {
       axios
         .post("/api/logout")
-        .then((response) => this.$router.push({ name: "Home" }))
-        
-        localStorage.removeItem("authenticated");
-        this.$emit("updateSidebar");
+        .then((response) => {
+          this.$router.push({ name: "Home" });
+          localStorage.removeItem("authenticated");
+          this.$emit("updateSidebar");
+        })
+        .catch((error) => console.log(error));
     },
   },
 };

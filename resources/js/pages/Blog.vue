@@ -11,6 +11,14 @@
 
         </form>
       </div>
+      <div class="categories">
+        <ul>
+          <li><a href="">Classic</a></li>
+          <li><a href="">Modern</a></li>
+          <li><a href="">Sketch</a></li>
+          <li><a href="">Nature</a></li>
+        </ul>
+      </div>
     
       <section class="cards-blog latest-blog">
         <div class="card-blog-content">
