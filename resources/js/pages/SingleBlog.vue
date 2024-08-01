@@ -2,7 +2,7 @@
     <h1>Art page</h1>
   
       <section class="single-blog-post">
-        <h1> Ivan Aivazovsky Stormy Sea, Large oil painting</h1>
+        <h1>The Starry Night </h1>
 
         <p class="time-and-author">
           2 hours ago
@@ -10,7 +10,7 @@
         </p>
 
         <div class="single-blog-post-ContentImage" data-aos="fade-left">
-          <img src="\public\images\Ivan Aivazovsky Stormy Sea, Large oil painting reproduction.jpeg" alt="" />
+          <img src="\public\images\van Gogh - The Starry Night.jpeg" alt="" />
         </div>
 
         <div class="about-text">

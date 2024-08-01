@@ -6,6 +6,7 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -39,3 +40,7 @@ Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
 // categories
 Route::get('categories', [CategoryController::class, 'index']);
+
+
+// posts in Home-Page
+Route::get('home-posts', [HomeController::class, 'index']);
