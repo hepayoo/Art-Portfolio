@@ -1,56 +1,61 @@
 <template>
-    <h1>Art page</h1>
-  
-      <section class="single-blog-post">
-        <h1>The Starry Night </h1>
+  <section class="single-blog-post">
+    <h1>{{ post.title }}</h1>
 
-        <p class="time-and-author">
-          2 hours ago
-          <span>Written By Alphayo Wakarindi</span>
-        </p>
+    <p class="time-and-author">
+      {{ post.created_at }}
+      <span>Written By {{ post.user }}</span>
+    </p>
 
-        <div class="single-blog-post-ContentImage" data-aos="fade-left">
-          <img src="\public\images\van Gogh - The Starry Night.jpeg" alt="" />
+    <div class="single-blog-post-ContentImage" data-aos="fade-left">
+      <img :src="`/${post.imagePath}`" alt="" />
+    </div>
+
+    <div class="about-text">
+      <p>
+        {{ post.body }}
+      </p>
+    </div>
+  </section>
+  <section class="recommended">
+    <p>Related</p>
+    <div class="recommended-cards">
+      <a href="">
+        <div class="recommended-card">
+          <img src="\public\images\London Painting ACEO Original Watercolor England Sketch Miniature Artwork by Anamustudio - Etsy.jpeg" alt="" loading="lazy" />
+          <h4>London-sketches</h4>
         </div>
-
-        <div class="about-text">
-          <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem veritatis architecto voluptatibus quisquam minus? Cumque provident beatae quis ipsum. Iure natus harum veniam quasi atque delectus culpa repellendus cupiditate ut?
-            <br><br>
-            
-        
-          </p>
+      </a>
+      <a href="">
+        <div class="recommended-card">
+          <img src="\public\images\téléchargement (13).jpeg" alt="" loading="lazy" />
+          <h4>Sketches</h4>
         </div>
-      </section>
-      <section class="recommended">
-        <p>Related</p>
-        <div class="recommended-cards">
-          <a href="">
-            <div class="recommended-card">
-              <img src="\public\images\Art Nouveau Floral.jpeg" alt="" loading="lazy" />
-              <h4>
-                Modern Art
-              </h4>
-            </div>
-          </a>
-          <a href="">
-            <div class="recommended-card">
-              <img src="\public\images\téléchargement (14).jpeg" alt="" loading="lazy" />
-              <h4>
-                Classic Van-gogh
-              </h4>
-            </div>
-          </a>
-          
-          <a href="">
-            <div class="recommended-card">
-              <img src="\public\images\London Painting ACEO Original Watercolor England Sketch Miniature Artwork by Anamustudio - Etsy.jpeg" alt="" loading="lazy" />
-              <h4>
-                London-Sketch
-              </h4>
-            </div>
-          </a>
-
+      </a>
+      <a href="">
+        <div class="recommended-card">
+          <img src="\public\images\Art Nouveau Floral.jpeg" alt="" loading="lazy" />
+          <h4>Oil paint art</h4>
         </div>
-      </section>
+      </a>
+    </div>
+  </section>
 </template>
+<script>
+export default {
+  props: ["slug"],
+  data() {
+    return {
+      post: {},
+    };
+  },
+  mounted() {
+    axios
+      .get("/api/posts/" + this.slug)
+      .then((response) => (this.post = response.data.data))
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+};
+</script>

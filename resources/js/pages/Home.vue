@@ -2,8 +2,8 @@
   <!-- header -->
   <header class="header">
     <div class="header-text">
-      <h1>Alphayo Blog</h1>
-      <h4>Home of verified news...</h4>
+      <h1>Art-Portfolio</h1>
+     
     </div>
     <div class="overlay"></div>
   </header>
