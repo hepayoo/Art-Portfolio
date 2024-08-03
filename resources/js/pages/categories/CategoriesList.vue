@@ -14,12 +14,12 @@
         <span>{{ index + 1 }}</span>
         <p>{{ category.name }}</p>
         <div>
-          <router-link :to="{ name: 'EditCategories' ,params:{id:category.id}}"
+          <router-link class="edit-link" :to="{ name: 'EditCategories' ,params:{id:category.id}}"
             >  Edit </router-link
           >
         </div>
   
-        <input type="button" value="Delete" @click="destroy(category.id)" />
+        <input type="button" value="Delete" @click="destroy(category.id)" class="delete-btn" />
       </div>
       <div class="index-categories">
         <router-link :to="{ name: 'CreateCategories' }"
@@ -103,23 +103,7 @@
     margin: 15px 8px;
   }
   
-  .categories-list .item div a {
-    padding: 6px 20px;
-    background-color: #4caf50;
-    color: #fff;
-    font-size: 14px;
-    display: inline-block;
-  }
   
-  .categories-list .item input {
-    padding: 6px 13px;
-    background-color: red;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    font-size: 14px;
-  }
   
   .categories ul li {
     list-style: none;
