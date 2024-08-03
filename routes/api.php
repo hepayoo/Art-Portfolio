@@ -36,6 +36,8 @@ Route::middleware('auth:sanctum')->delete('categories/{category}', [CategoryCont
 // post
 Route::middleware('auth:sanctum')->post('posts', [PostController::class, 'store']);
 Route::middleware('auth:sanctum')->put('posts/{post:slug}', [PostController::class, 'update']);
+Route::middleware('auth:sanctum')->delete('posts/{post:slug}', [PostController::class, 'destroy']);
+
 
 //////////////////////////////////////////////// PUBLIC ROUTES //////////////////////////////////////////////// 
 Route::post('register', [RegisteredUserController::class, 'store']);
