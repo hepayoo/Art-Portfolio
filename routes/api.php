@@ -7,6 +7,7 @@ use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RelatedPostController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -46,3 +47,4 @@ Route::get('categories', [CategoryController::class, 'index']);
 Route::get('home-posts', [HomeController::class, 'index']);
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::get('posts', [PostController::class, 'index']);
+Route::get('related-posts/{post:slug}', [RelatedPostController::class, 'index']);
