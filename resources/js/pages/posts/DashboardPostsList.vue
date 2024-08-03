@@ -22,26 +22,26 @@
       </div>
     </div>
   </template>
-<script>
-export default {
-  emits: ["updateSidebar"],
-  data() {
-    return {
-      posts: [],
-      success: false,
-    };
-  },
-
-  mounted() {
-    axios
-      .get("/api/posts")
-      .then((response) => (this.posts = response.data.data))
-      .catch((error) => {
-        console.log(error);
-      });
-  },
-};
-</script>
+  <script>
+  export default {
+    emits: ["updateSidebar"],
+    data() {
+      return {
+        posts: [],
+        success: false,
+      };
+    },
+  
+    mounted() {
+      axios
+        .get("/api/dashboard-posts")
+        .then((response) => (this.posts = response.data.data))
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  };
+  </script>
   
   <style scoped >
   .categories-list {

@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RelatedPostController;
+use App\Http\Controllers\DashboardPostController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -48,3 +49,5 @@ Route::get('home-posts', [HomeController::class, 'index']);
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::get('posts', [PostController::class, 'index']);
 Route::get('related-posts/{post:slug}', [RelatedPostController::class, 'index']);
+
+Route::get('dashboard-posts', [DashboardPostController::class, 'index']);
